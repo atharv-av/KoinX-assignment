@@ -1,11 +1,26 @@
-"use client";
-
-import { ArrowUp, Bitcoin, ChevronUp, ChevronUpSquare } from "lucide-react";
+import { ArrowUp, Bitcoin } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef, memo, useState } from "react";
+import { fetchBtcRates } from "../api/fetchData";
+
+interface BtcRates {
+  usd: number;
+  inr: number;
+}
 
 const TradingViewWidget: React.FC = () => {
+  const [btcRates, setBtcRates] = useState<BtcRates | null>(null);
   const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetchBtcRates()
+      .then((data) => {
+        if (data) {
+          setBtcRates(data.bitcoin);
+        }
+      })
+      .catch((error) => console.error("Error fetching BTC rates:", error));
+  }, []);
 
   useEffect(() => {
     if (!container.current) return;
@@ -56,18 +71,22 @@ const TradingViewWidget: React.FC = () => {
         </div>
         <div className="flex flex-col justify-start gap-3 mt-8">
           <div className="flex items-center gap-4">
-            <p className="font-bold lg:text-3xl md:text-3xl text-2xl">$46,953.04</p>
+            <p className="font-bold lg:text-3xl md:text-3xl text-2xl">
+              {btcRates ? `$${btcRates.usd}` : "Loading..."}
+            </p>
             <div className="flex items-center cursor-default bg-[#ebf9f4] text-[#14b079] lg:text-base text-xs p-1 rounded-md">
               <ArrowUp />
               <p>2.51%</p>
             </div>
             <p className="text-slate-500">(24H)</p>
           </div>
-          <p className="lg:text-lg md:text-lg text-sm">Rs. 39,42,343</p>
+          <p className="lg:text-lg md:text-lg text-sm">
+            {btcRates ? `₹${btcRates.inr}` : "Loading..."}
+          </p>
         </div>
       </div>
       <hr />
-        <p className="font-bold">Bitcoin Price Chart (USD)</p>
+      <p className="font-bold">Bitcoin Price Chart (USD)</p>
       <div className="h-[60vh]">
         <div className="tradingview-widget-container h-full" ref={container}>
           <div className="tradingview-widget-container__widget h-[calc(100% - 32px)] w-full"></div>

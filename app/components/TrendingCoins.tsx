@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { fetchTrendingData } from "../api/trendingCoins";
+import { fetchTrendingData } from "../api/fetchData";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 interface Coin {
@@ -19,7 +19,6 @@ const TrendingCoins: React.FC = () => {
     const fetchData = async () => {
       try {
         const data = await fetchTrendingData();
-        console.log("Trending data:", data);
         setTrendingData(data?.coins.map((coin: any) => coin.item) || []);
       } catch (error) {
         console.error("Error fetching trending data:", error);
