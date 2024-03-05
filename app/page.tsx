@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import MobileNavigation from "./components/MobileNavigation";
+import MainContent from "./components/MainContent";
 import TradingWidget from "./components/TradingWidget";
 
 export default function Home() {
@@ -7,9 +8,7 @@ export default function Home() {
     <>
       <Navbar />
       <MobileNavigation />
-      <div className="bg-[#eff2f5] h-screen px-8 py-6">
-        <TradingWidget />
-      </div>
+      <MainContent />
     </>
   );
 }
