@@ -41,7 +41,7 @@ const TradingViewWidget: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white h-full lg:w-1/2 w-full p-8 flex flex-col gap-6">
+    <div className="bg-white h-full lg:w-[70%] w-full p-8 flex flex-col gap-6 rounded-md">
       <div className="flex flex-col gap-4 items-start justify-center">
         <div className="flex flex-row items-center gap-8">
           <div className="flex flex-row items-center gap-3">
@@ -68,7 +68,7 @@ const TradingViewWidget: React.FC = () => {
       </div>
       <hr />
         <p className="font-bold">Bitcoin Price Chart (USD)</p>
-      <div className="lg:h-full h-[60vh]">
+      <div className="h-[60vh]">
         <div className="tradingview-widget-container h-full" ref={container}>
           <div className="tradingview-widget-container__widget h-[calc(100% - 32px)] w-full"></div>
           <div className="tradingview-widget-copyright">
