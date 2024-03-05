@@ -1,6 +1,6 @@
 "use client";
 
-import { Bitcoin, ChevronUp, ChevronUpSquare } from "lucide-react";
+import { ArrowUp, Bitcoin, ChevronUp, ChevronUpSquare } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, memo } from "react";
 
@@ -41,7 +41,7 @@ const TradingViewWidget: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white h-full lg:w-[70%] w-full p-8 flex flex-col gap-6 rounded-md">
+    <div className="bg-white h-full w-full p-8 flex flex-col gap-6 rounded-md">
       <div className="flex flex-col gap-4 items-start justify-center">
         <div className="flex flex-row items-center gap-8">
           <div className="flex flex-row items-center gap-3">
@@ -58,7 +58,7 @@ const TradingViewWidget: React.FC = () => {
           <div className="flex items-center gap-4">
             <p className="font-bold lg:text-3xl md:text-3xl text-2xl">$46,953.04</p>
             <div className="flex items-center cursor-default bg-[#ebf9f4] text-[#14b079] lg:text-base text-xs p-1 rounded-md">
-              <ChevronUp />
+              <ArrowUp />
               <p>2.51%</p>
             </div>
             <p className="text-slate-500">(24H)</p>
