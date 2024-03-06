@@ -11,6 +11,7 @@ interface ProgressBarItem {
 }
 
 interface tableItem {
+  id: string;
   name: string;
   value: string;
   percentage?: string;
@@ -35,34 +36,42 @@ const progressBar: ProgressBarItem[] = [
 
 const fundamentalsTable: tableItem[] = [
   {
+    id: "1",
     name: "Bitcoin Price",
     value: "$16,815.46",
   },
   {
+    id: "2",
     name: "Market Cap",
     value: "$323,507,290,047",
   },
   {
+    id: "3",
     name: "24h Low / 24h High",
     value: "$16,382.07 / $16,874.12",
   },
   {
+    id: "4",
     name: "Market Cap Dominance",
     value: "38.343%",
   },
   {
+    id: "5",
     name: "7d Low / 7d High",
     value: "$16,382.07 / $16,874.12",
   },
   {
+    id: "6",
     name: "Volume / Market Cap",
     value: "0.0718",
   },
   {
+    id: "7",
     name: "Trading Volume",
     value: "$23,249,202,782",
   },
   {
+    id: "8",
     name: "All-Time High",
     value: "$69,044.77",
     percentage: "-75.6%",
@@ -70,11 +79,13 @@ const fundamentalsTable: tableItem[] = [
     date: "Nov 10, 2021 (about 1 year)",
   },
   {
+    id: "9",
     name: "Market Cap Rank",
     value: "#1",
   },
 
   {
+    id: "10",
     name: "All-Time Low",
     value: "$67.81",
     percentage: "24729.1%",

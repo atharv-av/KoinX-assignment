@@ -12,13 +12,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-interface event {
-  icon: string;
-  title: string;
-  description: string;
-}
 
 interface estimate {
+  id: string;
   title: string;
   color: string;
   value: number;
@@ -26,16 +22,19 @@ interface estimate {
 
 const analystEstimates: estimate[] = [
   {
+    id: "1",
     title: "Buy",
     color: "bg-green-500",
     value: 76,
   },
   {
+    id: "2",
     title: "Hold",
     color: "bg-gray-500",
     value: 8,
   },
   {
+    id: "3",
     title: "Sell",
     color: "bg-red-500",
     value: 16,
@@ -78,7 +77,9 @@ const Sentiment: React.FC = () => {
                             </p>
                           </div>
                           <div className="font-light text-base ml-14">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, facilis quo! Cumque adipisci fuga obcaecati magnam, minus ad molestias.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Nam, facilis quo! Cumque adipisci fuga
+                            obcaecati magnam, minus ad molestias.
                           </div>
                         </div>
                       </div>

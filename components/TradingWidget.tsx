@@ -1,5 +1,6 @@
+/* eslint-disable */
+
 import { ArrowUp, Bitcoin } from "lucide-react";
-import Link from "next/link";
 import React, { useEffect, useRef, memo, useState } from "react";
 import { fetchBtcRates } from "../app/api/fetchData";
 
