@@ -12,7 +12,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-
 interface estimate {
   id: string;
   title: string;
@@ -60,11 +59,8 @@ const Sentiment: React.FC = () => {
             >
               <CarouselContent className="">
                 {Array.from({ length: 5 }).map((_, index) => (
-                  <div className="mr-10">
-                    <CarouselItem
-                      key={index}
-                      className="md:basis-1/2 lg:basis-1/2 basis-1"
-                    >
+                  <div key={index} className="mr-10">
+                    <CarouselItem className="md:basis-1/2 lg:basis-1/2 basis-1">
                       <div className="p-1">
                         <div className="h-52 w-96 rounded-lg bg-blue-200 flex flex-col gap-4 p-3">
                           <div className="flex flex-row gap-2">

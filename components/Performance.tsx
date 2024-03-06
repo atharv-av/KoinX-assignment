@@ -4,6 +4,7 @@ import { Info } from "lucide-react";
 import React from "react";
 
 interface ProgressBarItem {
+  id: string;
   lowerLimit: string;
   lowerLimitValue: string;
   upperLimit: string;
@@ -21,12 +22,14 @@ interface tableItem {
 
 const progressBar: ProgressBarItem[] = [
   {
+    id: "1",
     lowerLimit: "Today's Low",
     lowerLimitValue: "46,930.22",
     upperLimit: "Today's High",
     upperLimitValue: "49,343.83",
   },
   {
+    id: "2",
     lowerLimit: "52W Low",
     lowerLimitValue: "16,930.22",
     upperLimit: "52W High",
@@ -99,8 +102,8 @@ const Performance: React.FC = () => {
       <div className="w-full mt-8 p-6 bg-white rounded-lg flex flex-col gap-6">
         <p className="font-semibold text-2xl">Performance</p>
         <div className="flex flex-col gap-6">
-          {progressBar.map((item, index) => (
-            <div className="flex items-center justify-between" key={index}>
+          {progressBar.map((item) => (
+            <div className="flex items-center justify-between" key={item.id}>
               <div className="flex flex-col gap-3">
                 <p className="text-sm text-slate-600">{item.lowerLimit}</p>
                 <p className="text-s, text-slate-800">{item.lowerLimitValue}</p>
@@ -119,9 +122,9 @@ const Performance: React.FC = () => {
             <Info className="text-white bg-slate-500 rounded-full" size={20} />
           </div>
           <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-10">
-            {fundamentalsTable.map((tableItem, index) => (
+            {fundamentalsTable.map((tableItem) => (
                 <div>
-              <div className="flex py-3 justify-between items-center" key={index}>
+              <div className="flex py-3 justify-between items-center" key={tableItem.id}>
                 <p className="flex-grow lg:text-sm md:text-sm text-[10px] text-slate-500">{tableItem.name}</p>
                 <div className="flex flex-col items-center justify-center h-10">
                   <div className="flex gap-2 items-center">
