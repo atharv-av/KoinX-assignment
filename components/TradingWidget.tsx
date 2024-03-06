@@ -1,7 +1,7 @@
 import { ArrowUp, Bitcoin } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, memo, useState } from "react";
-import { fetchBtcRates } from "../api/fetchData";
+import { fetchBtcRates } from "../app/api/fetchData";
 
 interface BtcRates {
   usd: number;

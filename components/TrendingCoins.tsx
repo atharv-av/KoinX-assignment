@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { fetchTrendingData } from "../api/fetchData";
+import { fetchTrendingData } from "../app/api/fetchData";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 interface Coin {

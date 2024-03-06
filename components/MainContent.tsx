@@ -7,6 +7,7 @@ import MainHeader from "./MainHeader";
 import TabNavigator from "./TabNavigator";
 import TrendingCoins from "./TrendingCoins";
 import Performance from "./Performance";
+import Sentiment from "./Sentiment";
 
 const MainContent = () => {
   return (
@@ -23,6 +24,7 @@ const MainContent = () => {
       <hr className="border-slate-600 lg:w-[56.5%] w-[98.5%]" />
       <div className="flex flex-col gap-6 lg:w-[57%] w-[98.5%]">
         <Performance />
+        <Sentiment />
       </div>
     </div>
   );

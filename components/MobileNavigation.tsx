@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/app/components/ui/sheet";
+} from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { Bitcoin, Menu, Settings2, Wrench } from "lucide-react";
 import Image from "next/image";
