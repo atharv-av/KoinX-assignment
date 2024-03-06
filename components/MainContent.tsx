@@ -9,6 +9,8 @@ import TrendingCoins from "./TrendingCoins";
 import Performance from "./Performance";
 import Sentiment from "./Sentiment";
 import AboutBTC from "./AboutBTC";
+import Team from "./Team";
+import Tokenomics from "./Tokenomics";
 
 const MainContent = () => {
   return (
@@ -27,6 +29,8 @@ const MainContent = () => {
         <Performance />
         <Sentiment />
         <AboutBTC />
+        <Tokenomics />
+        <Team />
       </div>
     </div>
   );
