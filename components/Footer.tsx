@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                     <Card>
                       <CardContent className="flex flex-col aspect-square items-center gap-8 justify-center">
                         <div className="flex flex-col">
-                          <div className="flex gap-2">
+                          <div className="flex lg:flex-row md:flex-row flex-col items-center gap-2 p-4">
                             <Image
                               src={coin.item.large}
                               alt="Trending Coins"
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                               %
                             </p>
                           </div>
-                          <p className="font-semibold text-xl">
+                          <p className="font-semibold lg:text-xl md:text-xl text-lg">
                             {coin.item.data.price}
                           </p>
                         </div>
@@ -91,11 +91,7 @@ const Footer: React.FC = () => {
             <CarouselNext />
           </Carousel>
         </div>
-      </div>
-
-
-
-      <div className="flex flex-col gap-2">
+      </div> <div className="flex flex-col gap-2">
         <p className="text-2xl font-bold">Trending Coins</p>
         <div className="mt-6">
           <Carousel
@@ -114,7 +110,7 @@ const Footer: React.FC = () => {
                     <Card>
                       <CardContent className="flex flex-col aspect-square items-center gap-8 justify-center">
                         <div className="flex flex-col">
-                          <div className="flex gap-2">
+                          <div className="flex lg:flex-row md:flex-row flex-col items-center gap-2 p-4">
                             <Image
                               src={coin.item.large}
                               alt="Trending Coins"
@@ -137,7 +133,7 @@ const Footer: React.FC = () => {
                               %
                             </p>
                           </div>
-                          <p className="font-semibold text-xl">
+                          <p className="font-semibold lg:text-xl md:text-xl text-lg">
                             {coin.item.data.price}
                           </p>
                         </div>
@@ -159,6 +155,8 @@ const Footer: React.FC = () => {
           </Carousel>
         </div>
       </div>
+
+
     </div>
   );
 };
