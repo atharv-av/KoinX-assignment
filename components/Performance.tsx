@@ -98,34 +98,36 @@ const fundamentalsTable: tableItem[] = [
 ];
 
 const Performance: React.FC = () => {
-    return (
-      <div className="w-full mt-8 p-6 bg-white rounded-lg flex flex-col gap-6">
-        <p className="font-semibold text-2xl">Performance</p>
-        <div className="flex flex-col gap-6">
-          {progressBar.map((item) => (
-            <div className="flex items-center justify-between" key={item.id}>
-              <div className="flex flex-col gap-3">
-                <p className="text-sm text-slate-600">{item.lowerLimit}</p>
-                <p className="text-s, text-slate-800">{item.lowerLimitValue}</p>
-              </div>
-              <div className="h-1 w-7/12 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"></div>
-              <div className="flex flex-col gap-3">
-                <p className="text-sm text-slate-600">{item.upperLimit}</p>
-                <p className="text-s, text-slate-800">{item.upperLimitValue}</p>
-              </div>
+  return (
+    <div className="w-full mt-8 p-6 bg-white rounded-lg flex flex-col gap-6">
+      <p className="font-semibold text-2xl">Performance</p>
+      <div className="flex flex-col gap-6">
+        {progressBar.map((item) => (
+          <div className="flex items-center justify-between" key={item.id}>
+            <div className="flex flex-col gap-3">
+              <p className="text-sm text-slate-600">{item.lowerLimit}</p>
+              <p className="text-s, text-slate-800">{item.lowerLimitValue}</p>
             </div>
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <p className="font-semibold text-slate-600 text-lg">Fundamentals</p>
-            <Info className="text-white bg-slate-500 rounded-full" size={20} />
+            <div className="h-1 w-7/12 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"></div>
+            <div className="flex flex-col gap-3">
+              <p className="text-sm text-slate-600">{item.upperLimit}</p>
+              <p className="text-s, text-slate-800">{item.upperLimitValue}</p>
+            </div>
           </div>
-          <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-10">
-            {fundamentalsTable.map((tableItem) => (
-                <div>
-              <div className="flex py-3 justify-between items-center" key={tableItem.id}>
-                <p className="flex-grow lg:text-sm md:text-sm text-[10px] text-slate-500">{tableItem.name}</p>
+        ))}
+      </div>
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-2">
+          <p className="font-semibold text-slate-600 text-lg">Fundamentals</p>
+          <Info className="text-white bg-slate-500 rounded-full" size={20} />
+        </div>
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-10">
+          {fundamentalsTable.map((tableItem) => (
+            <div key={tableItem.id}>
+              <div className="flex py-3 justify-between items-center">
+                <p className="flex-grow lg:text-sm md:text-sm text-[10px] text-slate-500">
+                  {tableItem.name}
+                </p>
                 <div className="flex flex-col items-center justify-center h-10">
                   <div className="flex gap-2 items-center">
                     <p className="lg:text-sm md:text-sm text-[10px] text-black font-semibold">
@@ -140,19 +142,19 @@ const Performance: React.FC = () => {
                     )}
                   </div>
                   {tableItem.date && (
-                    <p className="lg:text-xs md:text-xs text-[8px] font-light text-right">{tableItem.date}</p>
+                    <p className="lg:text-xs md:text-xs text-[8px] font-light text-right">
+                      {tableItem.date}
+                    </p>
                   )}
                 </div>
               </div>
-                <div className="h-[1px] bg-slate-700"></div>
-              </div>
-              
-            ))}
-          </div>
+              <div className="h-[1px] bg-slate-700"></div>
+            </div>
+          ))}
         </div>
       </div>
-    );
-  };
-  
-  export default Performance;
-  
+    </div>
+  );
+};
+
+export default Performance;

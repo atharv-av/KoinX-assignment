@@ -102,7 +102,7 @@ const Sentiment: React.FC = () => {
             </div>
             <div className="flex flex-col gap-2 w-1/2">
               {analystEstimates.map((estimate) => (
-                <div className="w-full flex gap-4 items-center justify-start">
+                <div className="w-full flex gap-4 items-center justify-start" key={estimate.id}>
                   <p className="text-sm w-6 text-slate-600">{estimate.title}</p>
                   <div
                     style={{ width: `${estimate.value}%` }}
