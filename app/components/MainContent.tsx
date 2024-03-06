@@ -6,6 +6,7 @@ import GetStarted from "./GetStarted";
 import MainHeader from "./MainHeader";
 import TabNavigator from "./TabNavigator";
 import TrendingCoins from "./TrendingCoins";
+import Performance from "./Performance";
 
 const MainContent = () => {
   return (
@@ -14,13 +15,15 @@ const MainContent = () => {
       <div className="flex gap-4">
         <TradingWidget />
         <div className="flex flex-col gap-3">
-
           <GetStarted />
           <TrendingCoins />
         </div>
-
       </div>
       <TabNavigator />
+      <hr className="border-slate-600 lg:w-[56.5%] w-[98.5%]" />
+      <div className="flex flex-col gap-6 lg:w-[57%] w-[98.5%]">
+        <Performance />
+      </div>
     </div>
   );
 };

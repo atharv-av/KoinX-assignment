@@ -29,9 +29,9 @@ const TrendingCoins: React.FC = () => {
   }, []);
 
   return (
-    <div className="hidden lg:visible lg:flex flex-col gap-8 bg-white p-8">
+    <div className="hidden lg:visible lg:flex flex-col gap-8 bg-white p-8 rounded-lg">
       <p className="text-2xl font-bold">Trending Coins (24h)</p>
-      <div className="flex items-center justify-between">
+      <div className="flex gap-80">
         <div className="flex flex-col w-full gap-4">
           {trendingData.slice(0, 3).map((coin) => (
             <div className="flex items-center gap-2 p-1" key={coin.id}>
@@ -41,14 +41,14 @@ const TrendingCoins: React.FC = () => {
                 height={25}
                 width={25}
               />
-              <div className="font-normal text-lg">{coin.name}</div>
+              <div className="font-normal text-lg cursor-default">{coin.name}</div>
             </div>
           ))}
         </div>
         <div className="flex flex-col gap-6 w-full items-start">
           {trendingData.slice(0, 3).map((coin) => (
             <div
-              className={`flex items-center gap-1 p-1 rounded-lg ${
+              className={`flex items-center gap-1 p-1 rounded-lg cursor-default ${
                 coin.data.price_change_percentage_24h.aed >= 0
                   ? "text-green-800 bg-green-300"
                   : "text-red-600 bg-red-300"
@@ -60,7 +60,7 @@ const TrendingCoins: React.FC = () => {
               ) : (
                 <ArrowDown size={17} />
               )}
-              {Math.abs(coin.data.price_change_percentage_24h.aed)}%
+              {Math.abs(coin.data.price_change_percentage_24h.aed).toFixed(2)}%
             </div>
           ))}
         </div>
