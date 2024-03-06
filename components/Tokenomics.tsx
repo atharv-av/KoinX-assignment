@@ -29,7 +29,7 @@ const cards: card[] = [
 
 const Tokenomics: React.FC = () => {
   return (
-    <div className="lg:block w-full mt-8 p-6 bg-white rounded-lg flex flex-col gap-6 hidden">
+    <div className="lg:block w-full mt-8 p-6 bg-white rounded-lg flex-col gap-6 hidden">
       <p className="font-semibold text-2xl">Tokenomics</p>
       <div className="flex flex-col gap-3">
         <p className="text-xl font-normal">
