@@ -5,25 +5,31 @@ import React from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
-interface card {
+interface member {
   id: string;
   img: string;
-  title: string;
-  bgColor: string;
+  name: string;
+  designation: string;
 }
 
-const cards: card[] = [
+const team: member[] = [
   {
     id: "1",
-    img: "/card1.png",
-    title: "Calculate your Profits",
-    bgColor: "bg-gradient-to-br from-[#75eba4] via-[#3c9da9] to-[#186aac]",
+    img: "/johnSmith.png",
+    name: "John Smith",
+    designation: "Designation here",
   },
   {
     id: "2",
-    img: "/card2.png",
-    title: "Calculate your tax liability",
-    bgColor: "bg-gradient-to-br from-[#ff9563] via-[#f7634a] to-[#f2413a]",
+    img: "/elinaWilliams.png",
+    name: "Elina Williams",
+    designation: "Designation here",
+  },
+  {
+    id: "3",
+    img: "/johnSmith.png",
+    name: "John Smith",
+    designation: "Designation here",
   },
 ];
 
@@ -40,9 +46,19 @@ const Team: React.FC = () => {
       </div>
       <hr />
       <div className="flex flex-col gap-3">
-        
+      {team.map((member) => (
+          <div key={member.id} className="flex lg:flex-row flex-col items-center gap-3 bg-blue-200 rounded-lg p-4">
+            <div className="flex flex-col items-center justify-center">
+            <Image src={member.img} alt={member.name} height={100} width={100} />
+              <p className="font-semibold">{member.name}</p>
+              <p className="text-xs text-slate-600">{member.designation}</p>
+            </div>
+            <div className="w-3/4 flex items-center justify-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, ut. Laboriosam aut distinctio voluptate sit assumenda impedit perspiciatis quos placeat. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas tempore id quasi rem similique laborum quae consequatur nesciunt!
+            </div>
+          </div>
+        ))}
       </div>
-      
     </div>
   );
 };
